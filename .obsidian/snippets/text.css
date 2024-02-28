@@ -1,0 +1,301 @@
+/* 标记 == ==  这个东东不咋用，和行内代码感觉好像，先放一边，以后实在想要再调*/
+/* 编辑模式 */
+/* 
+.cm-s-obsidian span.cm-highlight {
+    border-radius: 2px;
+    margin: 0.15em;
+    padding-left: 0.1em;
+    padding-right: 0.1em;
+    padding-top: 0.15em;
+    padding-bottom: 0.15em;
+    color: #FFF5E4;
+    background-color: #FF9494;
+    opacity: 0.95;
+    font-weight: bold;
+}
+*/
+
+/* 阅读模式 */
+/*
+.markdown-rendered mark {
+    border-radius: 2px;
+    margin: 0.15em;
+    padding-left: 0.1em;
+    padding-right: 0.1em;
+    padding-top: 0.15em;
+    padding-bottom: 0.15em;
+    color: #FFF5E4;
+    background-color: #FF9494;
+    opacity: 0.95;
+    font-weight: bold;
+}
+*/
+
+
+
+
+/* 加粗 */
+/* 编辑模式 */
+.cm-strong {
+    font-weight: bold;
+    color: #ffc7c7;
+}
+
+/* 阅读模式 */
+strong {
+    font-weight: bold;
+    color: #ffc7c7;
+}
+
+
+
+
+
+
+/* 所有行 */
+/* 编辑模式 */
+.markdown-source-view.mod-cm6 .cm-line {
+    padding: 0.3em;
+    padding-left: 0;
+}
+
+/* 阅读模式 */
+.markdown-preview-view p {
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    line-height: 1.8em;
+}
+
+
+
+
+
+
+
+/* 标题 #H1H2H3H4H5H6 */
+/* 编辑模式 */
+.HyperMD-header-1.cm-line {
+    padding-top: 2.4em !important;
+    padding-bottom: 0.1em !important;
+}
+
+.HyperMD-header-2.cm-line {
+    color: #bedbf8;
+    padding-top: 1.4em !important;
+    padding-bottom: 0.4em !important;
+}
+
+.HyperMD-header-3.cm-line {
+    color: #c3d9ee;
+    padding-top: 1em !important;
+    padding-bottom: 0.4em !important;
+}
+
+.HyperMD-header-4.cm-line {
+    color: #e4f0fa;
+    padding-top: 0.6em !important;
+    padding-bottom: 0.4em !important;
+}
+
+.HyperMD-header-5.cm-line {
+    padding-top: 0.5em !important;
+    padding-bottom: 0.4em !important;
+}
+
+.HyperMD-header-6.cm-line {
+    padding-top: 0.5em !important;
+    padding-bottom: 0.4em !important;
+}
+
+/* 阅读模式 */
+.markdown-rendered h1 {
+    padding-top: 2.4em;
+    padding-bottom: 0.1em
+}
+
+.markdown-rendered h2 {
+    color: #bedbf8;
+    padding-top: 1.4em;
+    padding-bottom: 0.4em
+}
+
+.markdown-rendered h3 {
+    color: #c3d9ee;
+    padding-top: 1em;
+    padding-bottom: 0.1em
+}
+
+.markdown-rendered h4 {
+    color: #e4f0fa;
+    padding-top: 0.6em;
+    padding-bottom: 0.1em
+}
+
+.markdown-rendered h5 {
+    padding-top: 0.5em;
+    padding-bottom: 0.1em
+}
+
+.markdown-rendered h6 {
+    padding-top: 0.5em;
+    padding-bottom: 0.1em
+}
+
+
+
+
+/* 横线 ---- */
+/* 编辑模式 */
+.markdown-source-view.mod-cm6 hr {
+    margin-top: 0.9em;
+    margin-bottom: 1.5em;
+}
+
+/* 阅读模式 */
+.markdown-rendered hr {
+    margin-top: 0.9em;
+    margin-bottom: 1.5em;
+}
+
+
+
+
+
+/* 图片 */
+/* 编辑模式与编辑模式，一些默认样式，动态（悬浮和长按）的分开写了css */
+.internal-embed img {
+    margin-top: 2.4em;
+    margin-left: 0.15em;
+    margin-right: 0.15em;
+    margin-bottom: 2.4em;
+    border-radius: 1em;
+    padding: 0.5em;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 1);
+    /* transition 属性将被添加到图片元素上，指定了 transform、box-shadow 和 border 属性的过渡效果，
+    持续时间为 0.3 秒，过渡函数为 ease。这样，在图片元素的这些属性发生变化时，过渡效果会使变化更加平滑。 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+/* 为了满足雨雀的图片... */
+
+
+/*
+注意，代码块和应用一样，在编辑模式下，他是一行一行的，没有整块的类
+这里直接放弃代码的编辑模式，直奔浏览模式
+*/
+
+
+
+
+
+/* 代码 ``` */
+/* 编辑模式 */
+
+/* 阅读模式 */
+pre {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+}
+
+pre:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    border-color: #be8bd3;
+}
+
+
+
+/* 行内代码 `` */
+/* 编辑模式 */
+.cm-s-obsidian span.cm-inline-code {
+    margin: 0.3em;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    padding-top: 0.15em;
+    padding-bottom: 0.15em;
+    font-style: italic;
+    color: #FFF5E4;
+    background-color: #ff9494;
+    opacity: 0.9;
+    border-radius: 6px;
+}
+
+/* 阅读模式 */
+.markdown-rendered code {
+    margin: 0.3em;
+    padding-left: 0.3em;
+    padding-right: 0.3em;
+    padding-top: 0.15em;
+    padding-bottom: 0.15em;
+    font-style: italic;
+    color: #FFF5E4;
+    background-color: #ff9494;
+    opacity: 0.9;
+    border-radius: 6px;
+}
+
+
+
+
+
+
+
+/* 引用 */
+/* 编辑模式 */
+.markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote {
+    color: #e4dcf2;
+    font-style: oblique;
+    background-color: #313131;
+    /* 边线的宽度、实线、颜色 */
+    border-left: 4px solid #be8bd3;
+    /* 边线的宽度、实线、颜色 */
+    line-height: 1.6em;
+    padding-left: 2em !important;
+}
+
+/* 阅读模式 */
+.markdown-rendered blockquote {
+    color: #e4dcf2;
+    font-style: oblique;
+    background-color: #313131;
+    /* 边线的宽度、实线、颜色 */
+    border-left: 4px solid #be8bd3;
+    border-radius: 2px;
+    padding: 0.4em 1em 0.4em 2em;
+
+}
+
+
+/* todo列表 */
+/* 编辑模式*/
+.markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="x"] {
+    text-decoration-line: none;
+    color: #896f90
+}
+
+/* 阅读模式 */
+ul>li.task-list-item[data-task="x"] {
+    text-decoration-line: none;
+    color: #896f90
+}
+
+ul>li.task-list-item {
+    margin-bottom: 0.2em;
+}
+
+/* 列表 */
+/* 编辑模式 */
+
+/* 阅读模式 */
+li {
+    margin-bottom: 0.6em;
+}
+
+/* ul {
+    margin-bottom: 10em;
+} */
+
+.markdown-rendered ul.has-list-bullet {
+    margin-bottom: 0.3em;
+}

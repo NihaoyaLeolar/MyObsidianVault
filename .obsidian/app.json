@@ -1,0 +1,20 @@
+{
+  "promptDelete": false,
+  "showLineNumber": false,
+  "showIndentGuide": true,
+  "livePreview": true,
+  "attachmentFolderPath": "Pictures",
+  "strictLineBreaks": false,
+  "showFrontmatter": false,
+  "pdfExportSettings": {
+    "includeName": true,
+    "pageSize": "Letter",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  },
+  "showInlineTitle": true,
+  "alwaysUpdateLinks": true,
+  "defaultViewMode": "preview",
+  "propertiesInDocument": "visible"
+}

@@ -1,0 +1,10 @@
+{
+  "shouldConfirmBeforeCreate": false,
+  "weekStart": "locale",
+  "wordsPerDot": 250,
+  "showWeeklyNote": true,
+  "weeklyNoteFormat": "gggg-W 周记",
+  "weeklyNoteTemplate": "",
+  "weeklyNoteFolder": "Daily-Todo/Weeks",
+  "localeOverride": "system-default"
+}

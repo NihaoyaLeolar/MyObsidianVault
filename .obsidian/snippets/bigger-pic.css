@@ -1,0 +1,6 @@
+/* 只更改预览情况：一直长按可以放大图片 */
+.markdown-preview-view img:active {
+    transform: scale(2);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 1);
+    border: 2px solid #be8bd3;
+}
