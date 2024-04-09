@@ -1,3 +1,7 @@
+---
+tags:
+  - springboot
+---
 > 在Spring Boot中，DTO（Data Transfer Object）是一种设计模式，用于在不同层之间传输数据。
 
 **DTO通常是一个简单的Java类，用于将数据从一个层传递到另一个层**。它包含与特定用例相关的数据字段，并提供相应的getter和setter方法。

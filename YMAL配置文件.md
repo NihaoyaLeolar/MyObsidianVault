@@ -1,3 +1,7 @@
+---
+tags:
+  - springboot
+---
 YAML为了解决存在的问题：SpringBoot 使用`application.properties`集中化管理配置，配置多以后难阅读和修改，**层级结构辨识度不高**。
 
 >YAML 是 "YAML Ain't a Markup Language"（YAML 不是一种标记语言）。在开发的这种语言时，YAML 的意思其实是："Yet Another Markup Language"（是另一种标记语言）。

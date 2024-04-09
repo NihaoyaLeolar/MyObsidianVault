@@ -85,7 +85,7 @@
     }
   ],
   "workspace:edit-file-title": [],
-  "markdown:toggle-preview": [
+  "workspace:close": [
     {
       "modifiers": [
         "Mod"
@@ -93,7 +93,6 @@
       "key": "W"
     }
   ],
-  "workspace:close": [],
   "editor:toggle-code": [
     {
       "modifiers": [
@@ -111,17 +110,6 @@
         "Shift"
       ],
       "key": "E"
-    }
-  ],
-  "emoji-magic:add-to-filename-start": [
-    {
-      "modifiers": [
-        "Alt",
-        "Ctrl",
-        "Mod",
-        "Shift"
-      ],
-      "key": "R"
     }
   ],
   "editor:delete-paragraph": [
@@ -152,5 +140,45 @@
       "key": "P"
     }
   ],
-  "workspace:new-tab": []
+  "workspace:new-tab": [],
+  "global-search:open": [
+    {
+      "modifiers": [
+        "Alt",
+        "Ctrl",
+        "Mod",
+        "Shift"
+      ],
+      "key": "F"
+    }
+  ],
+  "backlink:toggle-backlinks-in-document": [
+    {
+      "modifiers": [
+        "Alt",
+        "Ctrl",
+        "Mod",
+        "Shift"
+      ],
+      "key": "3"
+    }
+  ],
+  "markdown:toggle-preview": [
+    {
+      "modifiers": [
+        "Mod"
+      ],
+      "key": "D"
+    }
+  ],
+  "workspace:close-others": [
+    {
+      "modifiers": [
+        "Mod",
+        "Shift"
+      ],
+      "key": "W"
+    }
+  ],
+  "workspace:close-window": []
 }

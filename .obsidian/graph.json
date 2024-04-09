@@ -1,30 +1,44 @@
 {
-  "collapse-filter": false,
+  "collapse-filter": true,
   "search": "",
   "showTags": false,
   "showAttachments": false,
   "hideUnresolved": false,
-  "showOrphans": false,
+  "showOrphans": true,
   "collapse-color-groups": false,
   "colorGroups": [
     {
-      "query": "#springboot",
+      "query": "tag:#多线程编程  ",
       "color": {
         "a": 1,
-        "rgb": 8908424
+        "rgb": 15901724
+      }
+    },
+    {
+      "query": "tag:#java  ",
+      "color": {
+        "a": 1,
+        "rgb": 7683323
+      }
+    },
+    {
+      "query": "tag:#HEAD",
+      "color": {
+        "a": 1,
+        "rgb": 8443135
       }
     }
   ],
-  "collapse-display": false,
+  "collapse-display": true,
   "showArrow": true,
-  "textFadeMultiplier": -0.3,
-  "nodeSizeMultiplier": 0.965593690766315,
-  "lineSizeMultiplier": 1.3460634985107,
+  "textFadeMultiplier": 0,
+  "nodeSizeMultiplier": 1.30956835865135,
+  "lineSizeMultiplier": 1.57795788563666,
   "collapse-forces": false,
-  "centerStrength": 0.518713248970312,
-  "repelStrength": 10,
-  "linkStrength": 1,
-  "linkDistance": 161,
-  "scale": 1.0672606881428,
+  "centerStrength": 0.495029023094973,
+  "repelStrength": 13.8082005681116,
+  "linkStrength": 0.88764357169322,
+  "linkDistance": 250,
+  "scale": 0.5359795996225915,
   "close": true
 }

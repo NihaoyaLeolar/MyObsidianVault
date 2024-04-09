@@ -4,50 +4,23 @@
     "type": "split",
     "children": [
       {
-        "id": "43f9f473e6d6697e",
+        "id": "da5f626908606140",
         "type": "tabs",
         "children": [
           {
-            "id": "92b037e70f98d594",
+            "id": "c1609e94c149003e",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "📒 秋招准备进度.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "8b3e55654c14189f",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "算法题.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "2e902c0e70e50df7",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "刷《剑指offer》1.0.md",
+                "file": "使用navicatd的导入向导进行数据导入.md",
                 "mode": "source",
                 "backlinks": true,
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 2
+        ]
       }
     ],
     "direction": "vertical"
@@ -66,7 +39,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "byModifiedTime"
               }
             }
           },
@@ -77,7 +50,7 @@
               "type": "tag",
               "state": {
                 "sortOrder": "frequency",
-                "useHierarchy": false
+                "useHierarchy": true
               }
             }
           },
@@ -95,7 +68,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "北师大",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": true,
@@ -109,8 +82,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 293.51103591918945,
-    "collapsed": true
+    "width": 293.51103591918945
   },
   "right": {
     "id": "af8a64faa91944c8",
@@ -126,7 +98,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "刷《剑指offer》1.0.md"
+                "file": "使用navicatd的导入向导进行数据导入.md"
               }
             }
           },
@@ -136,7 +108,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "刷《剑指offer》1.0.md",
+                "file": "使用navicatd的导入向导进行数据导入.md",
                 "collapseAll": true,
                 "extraContext": true,
                 "sortOrder": "alphabetical",
@@ -153,39 +125,9 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "刷《剑指offer》1.0.md",
+                "file": "使用navicatd的导入向导进行数据导入.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
-              }
-            }
-          },
-          {
-            "id": "4a04f86360ec0d9d",
-            "type": "leaf",
-            "state": {
-              "type": "file-properties",
-              "state": {
-                "file": "刷《剑指offer》1.0.md"
-              }
-            }
-          },
-          {
-            "id": "a50fd45db16fb126",
-            "type": "leaf",
-            "state": {
-              "type": "calendar",
-              "state": {}
-            }
-          },
-          {
-            "id": "c0d440504ca11778",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency",
-                "showSearch": false,
-                "searchQuery": ""
               }
             }
           }
@@ -193,56 +135,56 @@
       }
     ],
     "direction": "horizontal",
-    "width": 357.5
+    "width": 253.5,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
       "graph:查看关系图谱": false,
       "canvas:新建白板": false,
-      "daily-notes:打开/创建今天的日记": true,
       "templates:插入模板": false,
       "command-palette:打开命令面板": true,
       "switcher:打开快速切换": false
     }
   },
-  "active": "2e902c0e70e50df7",
+  "active": "c1609e94c149003e",
   "lastOpenFiles": [
-    "算法题.md",
-    "刷《剑指offer》1.0.md",
-    "📒 秋招准备进度.md",
-    "项目准备.md",
-    "安装nginx环境.md",
-    "100Days/2023-09-13 星期三.md",
-    "@Resource 与 @Autowire.md",
-    "🧑‍🎓 北师大项目.md",
-    "黑马点评.md",
-    "用悲观锁来解决一人多单问题.md",
-    "实现一人一单需求.md",
-    "超卖问题.md",
-    "JMeter 工具.md",
-    "实现秒杀的基本下单功能.md",
-    "用乐观锁解决超卖问题.md",
-    "悲观锁与乐观锁.md",
-    "分布式集群下悲观锁失效.md",
-    "Pictures/CleanShot 2024-03-01 at 16.32.57@2x.png",
-    "Pictures/CleanShot 2024-03-01 at 16.25.03@2x.png",
-    "Pictures/CleanShot 2024-03-01 at 16.14.13@2x.png",
-    "Pictures/CleanShot 2024-03-01 at 16.13.09@2x.png",
-    "Pictures/CleanShot 2024-03-01 at 16.12.15@2x.png",
-    "Pictures/CleanShot 2024-03-01 at 15.29.35@2x.png",
-    "Pictures/CleanShot 2024-03-01 at 15.26.32@2x.png",
-    "Pictures/CleanShot 2024-03-01 at 14.38.24@2x.png",
-    "Pictures/CleanShot 2024-03-01 at 14.37.52@2x.png",
-    "Pictures/CleanShot 2024-03-01 at 14.30.25@2x.png",
-    "测试缓存击穿得到了解决.md",
-    "缓存更新策略的最佳实践方案.md",
-    "实现全局唯一Id.md",
-    "优惠券的数据结构.md",
-    "全局ID生成器.md",
-    "简单的自增Id设计.md",
-    "基于互斥锁解决商户查询可能的缓存击穿问题.md",
-    "基于逻辑过期方式解决商户查询可能的缓存击穿问题.md",
-    "反序列化如果出现泛型.md",
+    "北师大项目.md",
+    "未命名.md",
+    "死锁.md",
+    "活锁.md",
+    "线程的活跃性问题.md",
+    "JUC并发编程.md",
+    "使用jstack定位死锁.md",
+    "使用classloader命令.md",
+    "数据表的继承设计.md",
+    "Synchronized 对象锁.md",
+    "线程的状态转换过程全解析.md",
+    "park & unpark 的底层实现.md",
+    "变量的线程安全分析.md",
+    "并发与并行.md",
+    "秋招准备进度.md",
+    "双端队列.md",
+    "Mac 快捷键设置.md",
+    "系统自带快捷设置.md",
+    "聚合思路.md",
+    "vector.md",
+    "基础攻防技术介绍.md",
+    "邮件攻防对抗.md",
+    "二进制漏洞.md",
+    "缓冲区溢出.md",
+    "简化部署.md",
+    "简化配置.md",
+    "📁 Pictures/CleanShot 2024-04-03 at 17.28.15@2x.png",
+    "📁 Pictures/CleanShot 2024-04-03 at 17.23.35@2x.png",
+    "📁 Pictures/CleanShot 2024-04-03 at 17.22.42@2x.png",
+    "📁 Pictures/CleanShot 2024-03-29 at 15.16.41@2x.png",
+    "📁 Pictures/CleanShot 2024-04-02 at 20.52.24@2x.png",
+    "📁 Pictures/CleanShot 2024-04-02 at 20.19.33@2x.png",
+    "📁 Pictures/CleanShot 2024-04-02 at 17.55.22@2x.png",
+    "📁 Pictures/CleanShot 2024-04-02 at 15.28.34@2x.png",
+    "📁 Pictures/CleanShot 2024-04-02 at 00.08.38@2x.png",
+    "📁 Pictures/CleanShot 2024-04-02 at 00.08.21@2x.png",
     "Pictures/尚硅谷SpringBoot3零基础教程，springboot入门到实战 - 011 - 11.自动配置-深入理解自动配置原理.mp4",
     "MyObsidianVault",
     "Users/nihaoya/Documents/秋招/redis学习/教程资源/Redis-笔记资料/01-入门篇/资料",

@@ -1,4 +1,8 @@
-[[springboot]] 
+---
+tags:
+  - springboot
+---
+
 
 
 >SpringBoot 帮我们简单、快速地创建一个独立的、生产级别的 Spring 应用

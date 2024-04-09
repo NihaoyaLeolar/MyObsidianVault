@@ -1,7 +1,3 @@
----
-banner: "![[cs.avif]]"
----
-[[app-obsidian]] [[css]]
 
 # 以更改代码块样式为例
 ----

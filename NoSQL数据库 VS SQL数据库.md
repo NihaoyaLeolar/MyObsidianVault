@@ -1,3 +1,8 @@
+---
+tags:
+  - mysql
+  - 缓存
+---
 ![[CleanShot 2024-02-05 at 13.50.07@2x.png]]
 ![[CleanShot 2024-02-05 at 14.25.36@2x.png]]
 ## SQL - Structured Relational

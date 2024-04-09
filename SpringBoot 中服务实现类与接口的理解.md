@@ -1,3 +1,7 @@
+---
+tags:
+  - springboot
+---
 > Spring框架，采用接口和实现类的方式是一种良好的实践
 ### 接口（Interface）
 1. **名称以 `I` 开头：** 例如，`IUserService` 表示一个用户服务的接口。

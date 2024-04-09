@@ -1,3 +1,7 @@
+---
+tags:
+  - mysql
+---
 在mysql中创建一个新用户，给navicat远程访问
 navicat连接mysql时，如果用户不存在，或者用户密码错误，会1130错误
 ![[CleanShot 2024-02-12 at 22.35.55@2x.png|400]]
