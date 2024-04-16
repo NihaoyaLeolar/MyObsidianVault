@@ -1,3 +1,8 @@
+---
+tags:
+  - springboot
+  - 缓存
+---
 SpringBoot有两个API工具类：`RedisTemplate` 和 它的子类`StringRedisTemplate`
 ```java
 // 默认好了：K为String, V也为String

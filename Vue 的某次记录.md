@@ -1,6 +1,6 @@
 ---
 tags:
-  - vue
+  - 前端开发
 ---
 当你使用了Vue.js的Vuex插件并创建了一个Vuex store，你可以在Vue组件中通过`this.$store`来访问和操作这个store中的状态（state）、触发mutations、以及执行actions。以下是一些基本的用法：
 

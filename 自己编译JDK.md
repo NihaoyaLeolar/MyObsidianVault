@@ -1,3 +1,7 @@
+---
+tags:
+  - JVM
+---
 >通过阅读和跟踪调试JDK源码，从而了解Java技术体系的原理！
 
 实在是跟着书本看不懂，最后跟着程序羊[JDK手动编译](https://www.bilibili.com/video/BV1zT4y177Zf/?spm_id_from=333.337.search-card.all.click&vd_source=2801815325491e9a2af89f7b23e58173)

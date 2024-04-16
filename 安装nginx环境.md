@@ -1,3 +1,7 @@
+---
+tags:
+  - 环境配置
+---
 使用homebrew直接安装：
 ```shell
 brew install nginx

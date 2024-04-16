@@ -1,0 +1,119 @@
+---
+tags:
+  - 多线程编程
+  - 锁
+---
+使用[[Synchronized 对象锁]]容易造成[[死锁]]问题，采用顺序加锁又容易造成[[饥饿]]问题。
+这里使用[[ReentrantLock]]
+
+```java  
+public class TestDeadLock {  
+    public static void main(String[] args) {  
+        Chopstick c1 = new Chopstick("1");  
+        Chopstick c2 = new Chopstick("2");  
+        Chopstick c3 = new Chopstick("3");  
+        Chopstick c4 = new Chopstick("4");  
+        Chopstick c5 = new Chopstick("5");  
+  
+        new Philosopher("苏格拉底1", c1, c2).start();  
+        new Philosopher("苏格拉底2", c2, c3).start();  
+        new Philosopher("苏格拉底3", c3, c4).start();  
+        new Philosopher("苏格拉底4", c4, c5).start();  
+        new Philosopher("苏格拉底5", c5, c1).start();  
+    }  
+}  
+  
+@Slf4j  
+class Philosopher extends Thread {  
+    Chopstick left;  
+    Chopstick right;  
+  
+    public Philosopher(String name, Chopstick left, Chopstick right) {  
+        super(name);  
+        this.left = left;  
+        this.right = right;  
+    }  
+  
+    @Override  
+    public void run() {  
+        while (true) {  
+            //尝试获取左手筷子  
+            if (left.tryLock()) {  
+                try {  
+                    //尝试获得右手筷子  
+                    if (right.tryLock()) {  
+                        try {  
+                            eat();  
+                        } finally {  
+                            right.unlock();  //放下左手筷子  
+                        }  
+                    }  
+                } finally {  
+                    left.unlock(); //放下右手筷子  
+                }  
+            }  
+        }  
+    }  
+  
+    private void eat() {  
+        log.debug("eating...");  
+        Sleeper.sleep(0.5);  
+    }  
+}  
+  
+//因为要锁住的对象是筷子，但是又不想用Synchronized锁，所以这里继承ReentrantLock  
+class Chopstick extends ReentrantLock {  
+    String name;  
+  
+    public Chopstick(String name) {  
+        this.name = name;  
+    }  
+  
+    @Override  
+    public String toString() {  
+        return "Chopstick{" +  
+                "name='" + name + '\'' +  
+                '}';  
+    }  
+}
+```
+
+输出，没有[[死锁]]，也没有[[饥饿]]问题：
+```text
+17:10:23.002 [苏格拉底1] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.002 [苏格拉底3] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.002 [苏格拉底3] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.002 [苏格拉底1] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.002 [苏格拉底3] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.002 [苏格拉底3] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.002 [苏格拉底3] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.002 [苏格拉底3] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.002 [苏格拉底5] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.002 [苏格拉底3] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.002 [苏格拉底5] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.002 [苏格拉底3] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.002 [苏格拉底3] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.002 [苏格拉底3] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.002 [苏格拉底3] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.002 [苏格拉底3] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.002 [苏格拉底3] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.003 [苏格拉底1] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.003 [苏格拉底1] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.003 [苏格拉底3] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.003 [苏格拉底4] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.003 [苏格拉底1] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.003 [苏格拉底2] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.004 [苏格拉底1] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.004 [苏格拉底5] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.004 [苏格拉底5] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.004 [苏格拉底3] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.004 [苏格拉底5] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.004 [苏格拉底1] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.004 [苏格拉底2] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.005 [苏格拉底3] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.005 [苏格拉底5] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.005 [苏格拉底5] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.005 [苏格拉底3] DEBUG nihaoya.test.Philosopher - eating...
+17:10:23.005 [苏格拉底1] DEBUG nihaoya.test.Philosopher - eating...
+...
+```

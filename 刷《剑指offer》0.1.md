@@ -1,3 +1,7 @@
+---
+tags:
+  - 算法题
+---
 ## 08-08
 - [剑指 Offer 05. 替换空格](https://leetcode.cn/problems/ti-huan-kong-ge-lcof/)
 	- 很简单

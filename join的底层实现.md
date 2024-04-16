@@ -1,3 +1,7 @@
+---
+tags:
+  - 多线程编程
+---
 直接上源码，通过wait实现的，代码思想是基于[[保护性暂停模式(Guarded Suspension)]]
 ```java
 //Thread.java

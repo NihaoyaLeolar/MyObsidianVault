@@ -1,8 +1,8 @@
 ---
-banner: "![[pymongo.jpg]]"
-banner_y: 0.49187
+tags:
+  - MongoDB
 ---
-[[mongodb]]
+使用python代码直接访问mongodb的方法
 # [文档](https://pymongo.readthedocs.io/en/stable)
 ----
 tutorial 部分写的特别清楚，可以快速使用上手
