@@ -1,0 +1,3 @@
+# 忽略Obsidian的配置文件夹
+.obsidian/
+.trash/

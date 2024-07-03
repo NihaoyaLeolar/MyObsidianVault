@@ -8,13 +8,22 @@ tags:
 ![[CleanShot 2024-02-26 at 16.11.41@2x.png]]
 # 业务的逻辑
 ---
-### 1. 发送验证码
-验证码在Redis中的存储方式：以手机号为key，值为验证码，String类型
+过程：
+1. 用户登录请求，服务器发送验证码，并将验证码写入redis
+2. 对比验证码是否一致，不一致直接返回
+3. 创建或登录用户，生成token，将用户信息写入redis
+### 1. 发送验证码，缓存验证码和用户
+**验证码**在Redis中的存储方式：
+- key：手机号
+- value：验证码（String类型）
+
+**用户**在Redis中的存储方式：
+- key：token，不用手机号，使用随机生成uuid
+- value：user对象（Hash类型）
 ![[CleanShot 2024-02-26 at 16.44.41@2x.png]]
 
-### 2. 校验登录
-用户在Redis中的存储方式：以token（不用手机号，随机生成uuid来用）为key，值为user对象，Hash类型
-**登录凭证不再是Cookie中的sessionID，这里使用token，让前端每次请求都携带token**
+### 2. 使用token校验登录
+**登录凭证不再是[[Cookie]]中的SessionID，这里使用token，让前端每次请求都携带token**
 注意：tomcat不会把token自动写到浏览器中，所以要自己手动的把token返回给前端
 ![[CleanShot 2024-02-26 at 16.46.43@2x.png]]
 # 具体操作
@@ -28,9 +37,8 @@ tags:
 这里主要注意一个技术点，第一运行报错的：StringRedisTemplate对类型的规定，所以我们不能一股脑的传，记得做一些转化，成他规定的样子。（具体的之后再深入，现在先过一遍这么个事）
 后面也用到了这个StringRedisTemplate存入List，也有相关大大小小问题，先[[浅浅理解StringDataRedis API的使用]]。
 ## 2. 修改拦截器
-1. 以token实现登录校验
-用户登录成功，会返回生成的token，这个token前端已经写好了处理：保存下来，之后进行其他需要登录校验的操作时，都会在请求头的authorization字段中。拦截器从请求头拿到token去进行校验！
-2. 新增拦截器
+1. 以token实现登录校验：用户登录成功，会返回生成的token，这个token前端已经写好了处理：保存下来，之后进行其他需要登录校验的操作时，都会在请求头的authorization字段中。拦截器从请求头拿到token去进行校验！
+2. 新增拦截器：token有效期的刷新应该是所有路径的请求都要有，而登录拦截的路径只是那些。所以**在登录拦截器前，再加一个所有路径都拦截的拦截器，用于保证token有效期的刷新**。
 - **RefreshTokenInterceptor**：只要用户进行了请求，就刷新token/user有效期，对一切路径生效。
 	- 要像session一样，用户登录一次，有效期就重新计算！redis如果不手动更改ttl，则不会实现以上。所以想到在拦截器这里对user的ttl进行更新
 - **LoginInterceptor**：拦截未登录的用户，对于需要登录的路径生效
@@ -39,7 +47,8 @@ tags:
 3. 配置拦截器的优先级
 以上两个拦截器是有先后顺序的！根据[[拦截器优先级控制]]，修改order值来配置优先级!
 
-
+## 3. 将user对象保存在ThreadLocal中
+在第一个拦截器中，但判断到用户存在，就`UserHolder.saveUser(userDTO);` 通过UserHolder封装好的类和方法，将userDTO对象存储到[[ThreadLocal]]中。方便userDTO对象可以在本线程的任意位置被快速获取到，避免了反复传递。
 
 # 总结
 ---

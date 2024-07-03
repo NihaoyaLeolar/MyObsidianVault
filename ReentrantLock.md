@@ -8,6 +8,9 @@ tags:
 - 可以设置超时时间
 - 可以设置为公平锁（先进先出）：默认是不公平的
 - 支持多个条件变量：synchronized的WaitSet只有一个，但是ReentrantLock可以对WaitSet细分
+
+可以用来解决同步问题，详见：[[顺序控制的多种解决方式]]
+
 # 基本语法
 ---
 ## 需要new一个ReentrantLock对象
@@ -51,7 +54,7 @@ public class TestReentrantLock {
                 lock.lockInterruptibly();  //获取锁，并设置成等待时是打断的  
             } catch (InterruptedException e) {  
                 e.printStackTrace();  
-                log.debug("没有获得锁，返回");  
+                log.debug("没有获得锁，在等待锁时被打断啦！返回～");  
                 return;  
             }  
   
@@ -159,11 +162,18 @@ Condition condition2 = lock.newCondition();
 - 线程1
 ```java
 //await 前需要获得锁  
-lock.lock();  
-  
-//await 执行后，会释放锁，进入条件变量的WaitSet等待  
-condition1.await();  
-//竞争 lock 锁成功后，从 await 后继续执行  
+lock.lock();   
+try {  
+	//await 执行后，会释放锁，进入条件变量的WaitSet等待  
+    waitForC.await();  
+    //竞争 lock 锁成功后，从 await 后继续执行 
+    ...  
+} catch (InterruptedException e) {   //await是可以被打断的
+    throw new RuntimeException(e);  
+} finally {  //最后要释放锁
+    lock.unlock();  
+}
+
 ```
 - 线程2
 ```java

@@ -1,7 +1,0 @@
-/* 只更改预览情况：一直长按可以放大图片 */
-.markdown-preview-view img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 1);
-    border: 2px solid #be8bd3;
-    transition-delay: 1ms; /* 悬停1秒后开始过渡效果 */
-}
